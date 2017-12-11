@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express');
 const sassMiddleware = require('node-sass-middleware');
 const path = require('path');

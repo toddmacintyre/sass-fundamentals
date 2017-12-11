@@ -1,3 +1,5 @@
+'use strict';
+
 const program = require('commander');
 const fs = require('fs');
 const chalk = require('chalk');
