@@ -1,3 +1,17 @@
-@mixin range-thumb() {
- 
+@mixin range-thumb {
+    &::-webkit-slider-thumb {
+        @content;
+        -webkit-appearance: none;
+        margin-top: -14px;
+    }
+    &::-moz-range-thumb {
+        @content;
+    }
+    &::-ms-thumb {
+        @content;
+    }
+}
+
+@mixin range-track() {
+
 }

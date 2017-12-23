@@ -4,6 +4,7 @@
 .btn {
   display: inline-block;
   border: 1px solid transparent;
+  color: $white;
   white-space: nowrap;
   vertical-align: middle;
   border-radius: 2px;
@@ -16,7 +17,7 @@
     opacity: 0.65;
     box-shadow: none;
   }
-  &.btn-yellow  { @include btn-color(#990);  }
+  &.btn-yellow  { @include btn-color($venus);  }
   &.btn-blue    { @include btn-color(#33a);  }
   &.btn-green   { @include btn-color(#3c3);  }
   &.btn-purple  { @include btn-color(#939);  }
