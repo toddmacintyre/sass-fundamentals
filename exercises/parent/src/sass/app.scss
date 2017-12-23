@@ -17,4 +17,17 @@
     width: 200px;
     float: left;
   }
+
+  &.right-nav {
+    .main {
+      margin-left: 0px;
+      margin-right: 220px;
+      border-left: 0;
+      border-right: 2px solid #333;
+    }
+
+    .sidebar {
+      float: right;
+    }
+  }
 }
