@@ -1,17 +1,77 @@
 @mixin range-thumb {
+    @mixin content {
+        box-shadow: $shadow;
+        border: $border;
+        height: 36px;
+        width: 16px;
+        border-radius: 3px;
+        background: $white;
+        cursor: pointer;
+    }
     &::-webkit-slider-thumb {
-        @content;
+        @include content;
         -webkit-appearance: none;
         margin-top: -14px;
     }
     &::-moz-range-thumb {
-        @content;
+        @include content;
     }
     &::-ms-thumb {
-        @content;
+        @include content;
     }
 }
 
 @mixin range-track() {
+    @mixin content {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        animate: 0.2s;
+    }
+    @mixin standard-and_moz--content {
+        box-shadow: $shadow;
+        background: $lightBlue;
+        border-radius: 1.3px;
+        border: $msFillBorder;
+    }
+    &::-webkit-slider-runnable-track {
+        @include content;
+        @include standard-and_moz--content;
+    }
+    &::-moz-range-track {
+        @include content;
+        @include standard-and_moz--content;
+    }
+    &::-ms-track {
+        @include content;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+    &:focus::-webkit-slider-runnable-track {
+        background: $lightBlue2;
+    }
+}
 
+@mixin msFill() {
+    @mixin content {
+        border: $msFillBorder;
+        border-radius: 2.6px;
+        box-shadow: $shadow;
+    }
+    &::-ms-fill-lower {
+        @include content;
+        background: $darkBlue;
+    }
+    &::-ms-fill-upper {
+        @include content;
+        background: $lightBlue;
+    }
+    &:focus::-ms-fill-lower {
+        background: $lightBlue;
+    }
+    &:focus::-ms-fill-upper {
+        background: $lightBlue2;
+    }
 }

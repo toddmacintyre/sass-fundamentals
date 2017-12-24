@@ -8,66 +8,7 @@ input[type=range] {
   &:focus {
     outline: none;
   }
-  &::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: $shadow;
-    background: $lightBlue;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
-  }
-  @include range-thumb() {
-    box-shadow: $shadow;
-    border: $border;
-    height: 36px;
-    width: 16px;
-    border-radius: 3px;
-    background: $white;
-    cursor: pointer;
-  }
-
-  &:focus::-webkit-slider-runnable-track {
-    background: $lightBlue2;
-  }
-  &::-moz-range-track {
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: $shadow;
-    background: $lightBlue;
-    border-radius: 1.3px;
-    border: 0.2px solid #010101;
-  }
-
-  &::-ms-track {
-    width: 100%;
-    height: 8.4px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    border-width: 16px 0;
-    color: transparent;
-  }
-  &::-ms-fill-lower {
-    background: $darkBlue;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-    box-shadow: $shadow;
-  }
-  &::-ms-fill-upper {
-    background: $lightBlue;
-    border: 0.2px solid #010101;
-    border-radius: 2.6px;
-    box-shadow: $shadow;
-  }
-  &:focus::-ms-fill-lower {
-    background: $lightBlue;
-  }
-  &:focus::-ms-fill-upper {
-    background: $lightBlue2;
-  }
+  @include range-thumb;
+  @include range-track;
+  @include msFill;
 }
