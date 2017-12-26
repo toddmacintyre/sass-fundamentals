@@ -1,0 +1,12 @@
+@import '_variables';
+
+@each $property in $properties {
+    @each $direction in $directions {
+        @for $i from 1 through 5 {
+            $value: $i * 5;            
+            .#{nth($property, 1)}-#{nth($direction, 1)}-#{$value} {
+                #{nth($property, 2)}-#{nth($direction, 2)}: #{$value}px
+            }
+        }
+    }
+}
