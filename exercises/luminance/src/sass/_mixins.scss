@@ -27,9 +27,25 @@
   }
 }
 
+@function cLinear($c) {
+
+  $a: 0.055;
+  @if $c <= 0.04045 {
+    @return $c / 12.92;
+  } @else {
+    @return pow( (($c + $a) / (1 + $a)), 2.4);
+  }
+
+}
+
 @function luminance($color) {
   /* REPLACE THIS WITH YOUR REAL FUNCTION */
-  @return 0.5;
+
+  $red: cLinear(red($color)/255);
+  $green: cLinear(green($color)/255);
+  $blue: cLinear(blue($color)/255);
+
+  @return .2126 * $red + .7152 * $green + .0722 * $blue;
 }
 
 $white_luminance: luminance(white);
